@@ -4,7 +4,7 @@ import classes from './BurgerIngredient.css';
 
 const style = {
     breadTop : {
-    height: '65px',
+    height: '80px',
     width: '500px',
     background: 'linear-gradient(#bc581e, #e27b36)',
     borderRadius: '50% 50% 0 0',
@@ -80,19 +80,19 @@ class BurgerIngredient extends Component {
                     <div style={style.breadTop}/>
                 )
                 break;
-            case ('Meat') :
+            case ('meat') :
                 ingredient =
                     <div style={style.meat}/>
                 break;
-            case ('Cheese') :
+            case ('cheese') :
                 ingredient =
                     <div style={style.cheese}/>
                 break;
-            case ('Bacon') :
+            case ('bacon') :
                 ingredient =
                     <div className={classes.Bacon}/>
                 break;
-            case ('Salad') :
+            case ('salad') :
                 ingredient =
                     <div style={style.salad}/>
                 break;

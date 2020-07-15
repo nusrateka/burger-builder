@@ -1,15 +1,30 @@
 import React from "react";
 import classes from './Burger.css';
 import BurgerIngredient from "./BurgerIngredients/BurgerIngredient";
+const style ={
+    burgerStyle:{
+        width: '100%',
+        margin: 'auto',
+        height: '250px',
+        overflow: 'scroll',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: '1.2rem',
+    }
+}
 const burger = (props) => {
-    console.log(props);
+    let getIngredients = Object.keys(props.ingredients).map(value=>{
+        return [...Array(props.ingredients[value])].map((i)=>{
+            return <BurgerIngredient key={value + i} type={value}/>
+        });
+    }).reduce((arr, el) => {return arr.concat(el)}, []);
+    if (getIngredients.length ===0){
+        getIngredients = <p>Please add some ingredients!</p>
+    }
     return (
-        <div className={classes.Burger}>
-            <p>hh</p>
+        <div style={style.burgerStyle}>
             <BurgerIngredient type='bread-top'/>
-            <BurgerIngredient type='Cheese'/>
-            <BurgerIngredient type='Salad'/>
-            <BurgerIngredient type='Meat'/>
+            {getIngredients}
             <BurgerIngredient type='bread-bottom'/>
         </div>
     )
