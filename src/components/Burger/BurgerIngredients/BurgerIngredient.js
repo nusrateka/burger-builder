@@ -64,13 +64,19 @@ const style = {
     margin: '2% auto',
     background: 'linear-gradient(#228c1d, #91ce50)',
     borderRadius: '20px',
-}
+},
+    bacon: {
+        height: '20px',
+        width: '500px',
+        margin: '2% auto',
+        background: 'linear-gradient(#228c1d, #91ce50)',
+        borderRadius: '20px',
+    }
 }
 
 class BurgerIngredient extends Component {
     render() {
         let ingredient = 0;
-        console.log(this.props.type, ingredient);
         switch (this.props.type) {
             case ('bread-bottom'):
                 ingredient = <div style={style.breadBottom}/>;

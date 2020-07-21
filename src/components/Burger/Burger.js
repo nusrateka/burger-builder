@@ -14,10 +14,12 @@ const style ={
 }
 const burger = (props) => {
     let getIngredients = Object.keys(props.ingredients).map(value=>{
-        return [...Array(props.ingredients[value])].map((i)=>{
+        return [...Array(props.ingredients[value])].map((_,i)=>{
             return <BurgerIngredient key={value + i} type={value}/>
         });
     }).reduce((arr, el) => {return arr.concat(el)}, []);
+    console.log(getIngredients);
+    //reducer is an action to get one value
     if (getIngredients.length ===0){
         getIngredients = <p>Please add some ingredients!</p>
     }
