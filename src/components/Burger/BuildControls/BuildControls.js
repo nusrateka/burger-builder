@@ -20,11 +20,19 @@ const controls = [
     {label: 'Bacon', type:'bacon'}
 ]
 
-const buildControls = () =>{
+const buildControls = (props) =>{
    return(
        <div style={style.buildControls}>
+           <p>Total Price: {props.totalPrice}</p>
            {controls.map(ctrl=>(
-             <BuildControl key={ctrl.label} label={ctrl.label}/>
+             <BuildControl
+                 key={ctrl.label}
+                 label={ctrl.label}
+                 added={()=>props.addIngredients(ctrl.type)
+                 }
+                 removed = {()=>props.removeIngredients(ctrl.type)}
+                 disabled ={props.disabled[ctrl.type]}
+             />
            ))}
        </div>
    )

@@ -5,7 +5,7 @@ const style ={
     burgerStyle:{
         width: '100%',
         margin: 'auto',
-        height: '250px',
+        height: '300px',
         overflow: 'scroll',
         textAlign: 'center',
         fontWeight: 'bold',

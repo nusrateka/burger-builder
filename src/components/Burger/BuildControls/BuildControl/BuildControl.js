@@ -29,8 +29,8 @@ const buildControl = (props) => {
     return (
         <div style={style.buildControl}>
             <div style={style.label}>{props.label}</div>
-            <button style={style.button}>Less</button>
-            <button style={style.button}>More</button>
+            <button style={style.button} onClick={props.removed} disabled={props.disabled}>Less</button>
+            <button style={style.button} onClick={props.added}>More</button>
         </div>
     )
 }
