@@ -1,5 +1,4 @@
 import React from "react";
-import classes from './Burger.css';
 import BurgerIngredient from "./BurgerIngredients/BurgerIngredient";
 const style ={
     burgerStyle:{
@@ -18,7 +17,6 @@ const burger = (props) => {
             return <BurgerIngredient key={value + i} type={value}/>
         });
     }).reduce((arr, el) => {return arr.concat(el)}, []);
-    console.log(getIngredients);
     //reducer is an action to get one value
     if (getIngredients.length ===0){
         getIngredients = <p>Please add some ingredients!</p>
